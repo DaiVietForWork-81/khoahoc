@@ -283,7 +283,11 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
             return (
               <div
                 key={course.id}
-                className="p-5 rounded-xl bg-[#0D0A14] border border-[#221a35] space-y-3.5"
+                className={`p-5 rounded-xl bg-[#0D0A14] border space-y-3.5 ${
+                  isExpanded
+                    ? 'lg:col-span-2 border-[#422039]'
+                    : 'border-[#221a35]'
+                }`}
               >
                 {/* Hàng huy hiệu môn học + khối lớp + trạng thái */}
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -359,7 +363,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                     </div>
 
                     {course.chapters.length > 0 ? (
-                      <div className="space-y-2">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
                         {course.chapters.map((ch) => (
                           <div
                             key={ch.id}
