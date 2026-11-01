@@ -128,9 +128,9 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
       {/* ===================================================================== */}
       {/* HEADER BANNER: TRUNG TÂM KHÓA HỌC ORBIT & CẦU NỐI REPO KHOAHOC       */}
       {/* ===================================================================== */}
-      <div className="hh-command-deck p-5 sm:p-7">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-5 border-b border-[#221a35]">
-          <div className="space-y-2">
+      <div className="hh-command-deck p-5 sm:p-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-[#221a35]">
+          <div className="space-y-1.5">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-[13px] font-bold px-2.5 py-1 rounded-lg bg-[#291524] text-[#FFB8E6] border border-[#422039] flex items-center gap-1.5">
                 <GraduationCap className="w-3.5 h-3.5 text-[#FF4FCB]" />
@@ -146,12 +146,12 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
               </span>
             </div>
 
-            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              Hệ Thống Khóa Học Chuyên Đề Orbit (Toán · Văn · Anh · KHTN · Tin Học)
-            </h2>
+            <h1 className="text-xl sm:text-2xl lg:text-[28px] font-black text-white tracking-tight leading-[1.18]">
+              Trung tâm khóa học chuyên đề Orbit
+            </h1>
             <p className="text-[13px] sm:text-sm text-white/65 max-w-3xl leading-relaxed">
-              Khung kiến trúc khóa học theo chương trình GDPT 2018 &amp; Ôn thi Chuyên/HSG. Toàn bộ nội dung bài giảng, video và giáo trình tại đây được tách biệt độc lập và đồng bộ tự động từ kho mã nguồn{' '}
-              <strong className="text-[#FFB8E6]">DaiVietForWork-81/khoahoc</strong> để đội ngũ phát triển khóa học làm việc riêng mà không ảnh hưởng tới Bot hay hệ thống chính.
+              Khung lộ trình học tập theo chương trình GDPT 2018 &amp; Ôn thi Chuyên/HSG (Toán, Văn, Anh, Lý, Hóa, Sinh, Tin, Sử–Địa). Nội dung bài giảng được đồng bộ 1 chiều từ kho{' '}
+              <strong className="text-[#FFB8E6]">DaiVietForWork-81/khoahoc</strong> để đội ngũ phát triển khóa học làm việc độc lập.
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
         {/* =================================================================== */}
         {/* MA TRẬN 8 MÔN HỌC (BẤM ĐỂ LỌC KHÓA HỌC THEO MÔN)                    */}
         {/* =================================================================== */}
-        <div className="pt-5 space-y-3">
+        <div className="pt-4 space-y-2.5">
           <div className="flex items-center justify-between gap-2">
             <span className="text-[13px] font-bold text-white/80 flex items-center gap-1.5">
               <Layers className="w-4 h-4 text-[#C4A6FF]" />
@@ -198,7 +198,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {catalog.subjects.map((subj) => {
               const isSelected = selectedSubject === subj.id;
               const count = subjectCounts[subj.id] ?? subj.totalCourses;
@@ -215,23 +215,17 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[15px] font-extrabold text-white">{subj.name}</span>
+                    <span className="text-sm font-extrabold text-white truncate">{subj.name}</span>
                     <span
-                      className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#181424] border border-[#28203d] tabular-nums"
+                      className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#181424] border border-[#28203d] tabular-nums shrink-0"
                       style={{ color: subj.accentColor }}
                     >
                       {count} khóa
                     </span>
                   </div>
-                  <p className="text-xs text-white/55 mt-1.5 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-white/55 mt-1 line-clamp-1">
                     {subj.description}
                   </p>
-                  <div className="mt-2.5 pt-2 border-t border-[#221a35] flex items-center justify-between text-xs font-mono text-white/45">
-                    <span>{subj.gradeRange}</span>
-                    <span className="text-[#FFB8E6] font-sans font-bold">
-                      {isSelected ? 'Đang lọc' : 'Chọn môn →'}
-                    </span>
-                  </div>
                 </button>
               );
             })}
@@ -240,58 +234,57 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
       </div>
 
       {/* ===================================================================== */}
-      {/* BỘ LỌC KHỐI LỚP & TÌM KIẾM KHÓA HỌC                                   */}
+      {/* KHUNG DANH MỤC KHÓA HỌC & GIÁO TRÌNH MẪU (UNIFIED SURFACE)            */}
       {/* ===================================================================== */}
-      <div className="hh-hub-surface p-4 sm:p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div className="flex flex-wrap items-center gap-1.5">
-          <button
-            type="button"
-            onClick={() => setSelectedSubject('ALL')}
-            data-active={selectedSubject === 'ALL'}
-            className="hh-hub-chip"
-          >
-            <span>Tất cả môn ({catalog.courses.length})</span>
-          </button>
-          {GRADE_FILTERS.map((g) => (
+      <div className="hh-hub-surface p-5 sm:p-6 space-y-5">
+        {/* Thanh bộ lọc khối lớp & tìm kiếm */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-[#221a35]">
+          <div className="flex flex-wrap items-center gap-1.5">
             <button
-              key={g.id}
               type="button"
-              onClick={() => setSelectedGrade(g.id)}
-              data-active={selectedGrade === g.id}
+              onClick={() => setSelectedSubject('ALL')}
+              data-active={selectedSubject === 'ALL'}
               className="hh-hub-chip"
             >
-              <span>{g.label}</span>
+              <span>Tất cả môn ({catalog.courses.length})</span>
             </button>
-          ))}
+            {GRADE_FILTERS.map((g) => (
+              <button
+                key={g.id}
+                type="button"
+                onClick={() => setSelectedGrade(g.id)}
+                data-active={selectedGrade === g.id}
+                className="hh-hub-chip"
+              >
+                <span>{g.label}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="relative w-full lg:w-80 shrink-0">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#C4A6FF]" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Tìm khóa học (Toán 12, Đọc hiểu, IELTS, C++...)"
+              className="w-full h-10 pl-9 pr-3.5 rounded-xl bg-[#0D0A14] border border-[#221a35] focus:border-[#FF4FCB] text-[13px] text-white placeholder:text-white/40 focus:outline-none"
+            />
+          </div>
         </div>
 
-        <div className="relative w-full lg:w-80 shrink-0">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#C4A6FF]" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm khóa học (Toán 12, Đọc hiểu, IELTS, C++...)"
-            className="w-full h-10 pl-9 pr-3.5 rounded-xl bg-[#0D0A14] border border-[#221a35] focus:border-[#FF4FCB] text-[13px] text-white placeholder:text-white/40 focus:outline-none"
-          />
-        </div>
-      </div>
+        {/* Lưới thẻ khóa học (items-start chống kéo giãn khoảng trống) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+          {filteredCourses.map((course) => {
+            const subj = getSubjectMeta(course.subjectId);
+            const statusBadge = getStatusBadge(course.status);
+            const isExpanded = expandedCourseId === course.id;
 
-      {/* ===================================================================== */}
-      {/* DANH SÁCH KHÓA HỌC & GIÁO TRÌNH BÀI GIẢNG MẪU (SCALABLE CARDS)        */}
-      {/* ===================================================================== */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {filteredCourses.map((course) => {
-          const subj = getSubjectMeta(course.subjectId);
-          const statusBadge = getStatusBadge(course.status);
-          const isExpanded = expandedCourseId === course.id;
-
-          return (
-            <div
-              key={course.id}
-              className="hh-hub-surface p-5 sm:p-6 flex flex-col justify-between gap-4"
-            >
-              <div className="space-y-3">
+            return (
+              <div
+                key={course.id}
+                className="p-5 rounded-2xl bg-[#0D0A14] border border-[#221a35] space-y-3.5"
+              >
                 {/* Hàng huy hiệu môn học + khối lớp + trạng thái */}
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -322,14 +315,14 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
 
                 {/* Tiêu đề & Tóm tắt khóa học */}
                 <div className="space-y-1.5">
-                  <h3 className="text-base sm:text-lg font-extrabold text-white leading-snug">
+                  <h2 className="text-base sm:text-lg font-extrabold text-white leading-snug">
                     {course.title}
-                  </h3>
+                  </h2>
                   <p className="text-[13px] text-white/65 leading-relaxed">{course.summary}</p>
                 </div>
 
                 {/* Thông số khóa học */}
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-mono text-white/55 tabular-nums pt-1">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-mono text-white/55 tabular-nums">
                   <span className="flex items-center gap-1.5">
                     <BookOpen className="w-3.5 h-3.5 text-[#FF4FCB]" />
                     <span>{course.lessonsCount} bài giảng</span>
@@ -342,7 +335,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
+                <div className="flex flex-wrap gap-1.5">
                   {course.tags.map((tag) => (
                     <span
                       key={tag}
@@ -355,7 +348,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
 
                 {/* Khung Chương & Bài giảng mẫu (Mở rộng khi bấm) */}
                 {isExpanded && (
-                  <div className="mt-3 pt-3 border-t border-[#221a35] space-y-2.5">
+                  <div className="pt-3 border-t border-[#221a35] space-y-2.5">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold text-[#FFB8E6]">
                         Khung chương trình mẫu (Chỉnh sửa tại data/courses.json)
@@ -370,14 +363,14 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                         {course.chapters.map((ch) => (
                           <div
                             key={ch.id}
-                            className="p-3 rounded-xl bg-[#0D0A14] border border-[#221a35] space-y-2"
+                            className="p-3 rounded-xl bg-[#130f1e] border border-[#241c38] space-y-2"
                           >
                             <div className="text-[13px] font-bold text-white">{ch.title}</div>
                             <div className="space-y-1.5">
                               {ch.lessons.map((ls) => (
                                 <div
                                   key={ls.id}
-                                  className="flex items-center justify-between gap-2 text-xs py-1 px-2 rounded-lg bg-[#14111f] text-white/80"
+                                  className="flex items-center justify-between gap-2 text-xs py-1 px-2 rounded-lg bg-[#191426] text-white/80"
                                 >
                                   <div className="flex items-center gap-2 min-w-0">
                                     {ls.type === 'video' ? (
@@ -399,7 +392,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                         ))}
                       </div>
                     ) : (
-                      <div className="p-3 rounded-xl bg-[#0D0A14] border border-[#221a35] text-xs text-white/60">
+                      <div className="p-3 rounded-xl bg-[#130f1e] border border-[#241c38] text-xs text-white/60">
                         Khóa học đang ở trạng thái chờ thêm chương mục trong tệp{' '}
                         <code className="text-[#FFB8E6] font-mono">data/courses.json</code> trên repo{' '}
                         <code className="text-emerald-300 font-mono">DaiVietForWork-81/khoahoc</code>.
@@ -407,37 +400,37 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                     )}
                   </div>
                 )}
-              </div>
 
-              {/* Action Footer */}
-              <div className="pt-3 border-t border-[#221a35] flex flex-wrap items-center justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setExpandedCourseId((prev) => (prev === course.id ? null : course.id))
-                  }
-                  className="px-3.5 py-2 rounded-xl bg-[#d61f79] hover:bg-[#e11d84] text-white font-extrabold text-[13px] flex items-center gap-1.5 cursor-pointer transition-colors"
-                >
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>{isExpanded ? 'Thu gọn khung bài giảng' : 'Xem khung bài giảng'}</span>
-                </button>
-
-                {onOpenExamVaultForSubject && (
+                {/* Action Footer */}
+                <div className="pt-3 border-t border-[#221a35] flex flex-wrap items-center justify-between gap-2">
                   <button
                     type="button"
                     onClick={() =>
-                      onOpenExamVaultForSubject(SUBJECT_TO_VAULT_MAP[course.subjectId])
+                      setExpandedCourseId((prev) => (prev === course.id ? null : course.id))
                     }
-                    className="px-3 py-2 rounded-xl bg-[#161420] hover:bg-[#1e1b2c] border border-[#221e30] text-[13px] font-bold text-white/85 hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
+                    className="px-3.5 py-2 rounded-xl bg-[#d61f79] hover:bg-[#e11d84] text-white font-extrabold text-[13px] flex items-center gap-1.5 cursor-pointer transition-colors"
                   >
-                    <span>Luyện đề {subj.shortName}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#FFB8E6]" />
+                    <BookOpen className="w-3.5 h-3.5" />
+                    <span>{isExpanded ? 'Thu gọn khung bài giảng' : 'Xem khung bài giảng'}</span>
                   </button>
-                )}
+
+                  {onOpenExamVaultForSubject && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onOpenExamVaultForSubject(SUBJECT_TO_VAULT_MAP[course.subjectId])
+                      }
+                      className="px-3 py-2 rounded-xl bg-[#161420] hover:bg-[#1e1b2c] border border-[#221e30] text-[13px] font-bold text-white/85 hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
+                    >
+                      <span>Luyện đề {subj.shortName}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#FFB8E6]" />
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
