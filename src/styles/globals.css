@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --hh-font: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --hh-font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--hh-font);
+  background-color: #08060e;
+  color: #f8f5ff;
+}
+
+.hh-command-deck,
+.hh-hub-surface {
+  position: relative;
+  border-radius: 12px;
+  background-color: rgba(17, 13, 27, 0.94);
+  border: 1px solid #221a35;
+}
+
+.hh-subject-cell {
+  position: relative;
+  border-radius: 12px;
+  background-color: rgba(17, 13, 27, 0.94);
+  border: 1px solid #221a35;
+  border-left: 3px solid var(--subject-accent, #ff4fcb);
+  padding: 14px 16px;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.hh-subject-cell:hover {
+  background-color: #181228;
+  border-color: #32264d;
+  border-left-color: var(--subject-accent, #ff4fcb);
+  transform: translateY(-1px);
+}
+
+.hh-hub-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #b4b4b4;
+  background-color: #14121d;
+  border: 1px solid #1f1c2b;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.hh-hub-chip:hover {
+  color: #ffffff;
+  background-color: #1b1826;
+  border-color: #2d2840;
+}
+
+.hh-hub-chip[data-active='true'] {
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #2b1626;
+  border-color: #522343;
+}
