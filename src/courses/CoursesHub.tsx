@@ -283,7 +283,7 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
             return (
               <div
                 key={course.id}
-                className="p-5 rounded-2xl bg-[#0D0A14] border border-[#221a35] space-y-3.5"
+                className="p-5 rounded-xl bg-[#0D0A14] border border-[#221a35] space-y-3.5"
               >
                 {/* Hàng huy hiệu môn học + khối lớp + trạng thái */}
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -363,14 +363,14 @@ export const CoursesHub: React.FC<CoursesHubProps> = ({ onOpenExamVaultForSubjec
                         {course.chapters.map((ch) => (
                           <div
                             key={ch.id}
-                            className="p-3 rounded-xl bg-[#130f1e] border border-[#241c38] space-y-2"
+                            className="p-3.5 rounded-xl bg-[#130f1e] border border-[#241c38] space-y-2"
                           >
                             <div className="text-[13px] font-bold text-white">{ch.title}</div>
                             <div className="space-y-1.5">
                               {ch.lessons.map((ls) => (
                                 <div
                                   key={ls.id}
-                                  className="flex items-center justify-between gap-2 text-xs py-1 px-2 rounded-lg bg-[#191426] text-white/80"
+                                  className="flex items-center justify-between gap-2 text-xs py-1 px-2.5 rounded-lg bg-[#191426] text-white/80"
                                 >
                                   <div className="flex items-center gap-2 min-w-0">
                                     {ls.type === 'video' ? (
